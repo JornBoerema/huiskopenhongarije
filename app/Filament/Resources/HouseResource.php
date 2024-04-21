@@ -70,7 +70,8 @@ class HouseResource extends Resource
 
                 FileUpload::make('images')
                     ->multiple()
-                    ->columnSpan(2)
+                    ->image()
+                    ->optimize('webp')
                     ->reorderable()
             ]);
     }
