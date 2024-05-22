@@ -8,6 +8,7 @@ use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Split;
 use Filament\Forms\Components\TextInput;
@@ -27,7 +28,7 @@ class HouseResource extends Resource
 
     protected static ?string $slug = 'houses';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {
@@ -42,8 +43,13 @@ class HouseResource extends Resource
                 TextInput::make('short_description')
                     ->required(),
 
-                TextInput::make('description')
-                    ->required(),
+                RichEditor::make('description')
+                    ->required()
+                    ->columnSpan(2),
+
+                RichEditor::make('surroundings')
+                    ->required()
+                    ->columnSpan(2),
 
                 TextInput::make('price')
                     ->required()
@@ -61,9 +67,6 @@ class HouseResource extends Resource
                     ->required()
                     ->integer(),
 
-                TextInput::make('surroundings')
-                    ->required(),
-
                 Checkbox::make('sold'),
 
                 Checkbox::make('is_published'),
@@ -73,6 +76,8 @@ class HouseResource extends Resource
                     ->image()
                     ->optimize('webp')
                     ->reorderable()
+                    ->columns(2)
+                    ->columnSpan(2),
             ]);
     }
 
