@@ -42,6 +42,8 @@
     @else
         <x-filament-fabricator::page-blocks :blocks="$page->blocks" />
     @endif
+
+    <x-footer></x-footer>
 </div>
 
 @stack('modals')

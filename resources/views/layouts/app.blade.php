@@ -42,6 +42,9 @@
             @else
                 {{ $slot }}
             @endif
+
+            <x-footer></x-footer>
+
         </div>
 
         @stack('modals')

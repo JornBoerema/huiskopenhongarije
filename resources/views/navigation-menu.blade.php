@@ -4,14 +4,14 @@
         <nav class="items-center justify-end gap-x-4 hidden lg:flex">
             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             <x-nav-link href="/woningaanbod" :active="request()->is('woningaanbod')">Woningaanbod</x-nav-link>
-            <x-nav-link
-                :items="[
-                    (object) ['title' => 'Renovatieplannen', 'href' => '/renovatieplannen'],
-                    (object) ['title' => 'Verbouwingen', 'href' => '/verbouwingen']
-                ]"
-            >
-                Bouw en infra
-            </x-nav-link>
+{{--            <x-nav-link--}}
+{{--                :items="[--}}
+{{--                    (object) ['title' => 'Renovatieplannen', 'href' => '/renovatieplannen'],--}}
+{{--                    (object) ['title' => 'Verbouwingen', 'href' => '/verbouwingen']--}}
+{{--                ]"--}}
+{{--            >--}}
+{{--                Bouw en infra--}}
+{{--            </x-nav-link>--}}
             <x-nav-link
                 :items="[
                     (object) ['title' => 'Omgeving', 'href' => '/omgeving'],
@@ -30,14 +30,14 @@
     <div x-show="open" class="z-40 absolute bg-foreground top-[72px] container py-12 grid grid-cols-1">
         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
         <x-nav-link href="/woningaanbod" :active="request()->is('woningaanbod')">Woningaanbod</x-nav-link>
-        <x-nav-link
-            :items="[
-                    (object) ['title' => 'Renovatieplannen', 'href' => '/renovatieplannen'],
-                    (object) ['title' => 'Verbouwingen', 'href' => '/verbouwingen']
-                ]"
-        >
-            Bouw en infra
-        </x-nav-link>
+{{--        <x-nav-link--}}
+{{--            :items="[--}}
+{{--                    (object) ['title' => 'Renovatieplannen', 'href' => '/renovatieplannen'],--}}
+{{--                    (object) ['title' => 'Verbouwingen', 'href' => '/verbouwingen']--}}
+{{--                ]"--}}
+{{--        >--}}
+{{--            Bouw en infra--}}
+{{--        </x-nav-link>--}}
         <x-nav-link
             :items="[
                     (object) ['title' => 'Omgeving', 'href' => '/omgeving'],

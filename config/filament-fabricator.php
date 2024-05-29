@@ -5,6 +5,7 @@ return [
     'routing' => [
         'enabled' => true,
         'prefix' => null, //    /pages
+
     ],
 
     'layouts' => [

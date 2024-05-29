@@ -20,14 +20,25 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationLabel = 'Gebruikers';
+    protected static ?string $label = 'Gebruiker';
+    protected static ?string $pluralLabel = 'Gebruikers';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->required()->email(),
-                TextInput::make('password')->required()->password()->visibleOn("create"),
+                TextInput::make('name')
+                    ->required(),
+
+                TextInput::make('email')
+                    ->required()
+                    ->email(),
+
+                TextInput::make('password')
+                    ->required()
+                    ->password()
+                    ->visibleOn("create"),
             ]);
     }
 
@@ -36,6 +47,7 @@ class UserResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
+
                 TextColumn::make('email'),
             ])
             ->filters([
