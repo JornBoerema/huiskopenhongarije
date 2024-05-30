@@ -20,7 +20,7 @@
 <x-app-layout>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col gap-y-4" x-data="{ image: '{{ $images[0] }}' }">
-            <img x-bind:src="image" alt="" class="rounded shadow-lg min-h-[480px] max-h-[480px] object-cover object-center" />
+            <img x-bind:src="'/storage/' + image" alt="" class="rounded shadow-lg min-h-[480px] max-h-[480px] object-cover object-center" />
             <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
                 @foreach($images as $image)
                     <div class="relative rounded overflow-hidden">
