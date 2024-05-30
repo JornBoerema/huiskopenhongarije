@@ -93,7 +93,7 @@ class HouseResource extends Resource
                     ->label('Afbeeldingen')
                     ->multiple()
                     ->image()
-                    ->optimize('webp')
+//                    ->optimize('webp')
                     ->reorderable()
                     ->columns(3)
                     ->columnSpan(2),
