@@ -1,6 +1,6 @@
 <div class="bg-foreground" x-data="{ open: false }">
     <div class="container py-4 flex items-center justify-between max-h-[72px]">
-        <a href="/"><h1 class="text-2xl font-semibold whitespace-nowrap text-white">Authentic Hongaars</h1></a>
+        <a href="/"><h1 class="text-2xl font-semibold whitespace-nowrap text-white">{{ config('app.name') }}</h1></a>
         <nav class="items-center justify-end gap-x-4 hidden lg:flex">
             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             <x-nav-link href="/woningaanbod" :active="request()->is('woningaanbod')">Woningaanbod</x-nav-link>

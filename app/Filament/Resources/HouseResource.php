@@ -6,6 +6,7 @@ use App\Filament\Resources\HouseResource\Pages;
 use App\Models\House;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -37,49 +38,64 @@ class HouseResource extends Resource
     {
         return $form
             ->schema([
+                Checkbox::make('sold')
+                    ->label('Verkocht'),
+
+                Checkbox::make('is_published')
+                    ->label('Is gepubliceerd'),
+
                 TextInput::make('title')
+                    ->label('Titel')
                     ->required(),
 
                 TextInput::make('subtitle')
+                    ->label('Subtitel')
                     ->required(),
 
                 TextInput::make('short_description')
+                    ->label('Korte omschrijving')
                     ->required(),
 
+                TextInput::make('price')
+                    ->label('Prijs')
+                    ->required()
+                    ->numeric(),
+
                 RichEditor::make('description')
+                    ->label('Omschrijving')
                     ->required()
                     ->columnSpan(2),
 
                 RichEditor::make('surroundings')
+                    ->label('Omgeving')
                     ->required()
                     ->columnSpan(2),
 
-                TextInput::make('price')
-                    ->required()
-                    ->numeric(),
+                Grid::make(3)
+                    ->schema([
+                        TextInput::make('surface')
+                            ->label('Oppervlakte')
+                            ->required()
+                            ->integer(),
 
-                TextInput::make('surface')
-                    ->required()
-                    ->integer(),
+                        TextInput::make('bedrooms')
+                            ->label('Slaapkamers')
+                            ->required()
+                            ->integer(),
 
-                TextInput::make('bedrooms')
-                    ->required()
-                    ->integer(),
-
-                TextInput::make('bathrooms')
-                    ->required()
-                    ->integer(),
-
-                Checkbox::make('sold'),
-
-                Checkbox::make('is_published'),
+                        TextInput::make('bathrooms')
+                            ->label('Badkamers')
+                            ->required()
+                            ->integer(),
+                    ]),
 
                 FileUpload::make('images')
+                    ->label('Afbeeldingen')
                     ->multiple()
                     ->image()
                     ->optimize('webp')
                     ->reorderable()
-                    ->columns(2)
+                    ->columns(3)
                     ->columnSpan(2),
             ]);
     }

@@ -2,7 +2,7 @@
     <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>
-                <h2 class="mb-6 text-xl font-semibold">Authentic Hongaars</h2>
+                <h2 class="mb-6 text-xl font-semibold">{{ config('app.name') }}</h2>
                 <ul class="font-normal">
                     <li class="mb-4">
                         <a href="/" class="hover:underline">
