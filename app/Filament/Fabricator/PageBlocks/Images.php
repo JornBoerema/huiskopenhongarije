@@ -16,6 +16,7 @@ class Images extends PageBlock
                 Repeater::make('images')
                     ->schema([
                         FileUpload::make('image')
+                            ->optimize('webp')
                     ])
             ]);
     }
