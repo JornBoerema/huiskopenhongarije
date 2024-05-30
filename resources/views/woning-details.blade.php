@@ -25,7 +25,7 @@
                 @foreach($images as $image)
                     <div class="relative rounded overflow-hidden">
                         <button class="absolute inset-0" @click="image = '{{ $image }}'"></button>
-                        <img src="{{ $image }}" alt="" class="border-4 border-background cursor-pointer w-[120px] h-[90px]" :class="{ '!border-primary': image === @js($image) }" />
+                        <img src="/storage/{{ $image }}" alt="" class="border-4 border-background cursor-pointer w-[120px] h-[90px]" :class="{ '!border-primary': image === @js($image) }" />
                     </div>
                 @endforeach
             </div>

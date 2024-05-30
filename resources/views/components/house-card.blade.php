@@ -10,7 +10,7 @@
 <div class="space-y-3 relative">
     <a href="/woningaanbod/{{ $house->id }}">
         @if($house->sold) <span class="absolute top-3 right-3 font-inter bg-red-500 text-white text-sm font-medium px-2 py-1 rounded">Sold - Verkocht</span> @endif
-        <img src="{{ '/storage/' . $images[0] }}" alt="" width="480px" height="350px" class="rounded min-h-[350px] max-h-[350px] object-cover object-center" />
+        <img src="/storage/{{ $images[0] }}" alt="" width="480px" height="350px" class="rounded min-h-[350px] max-h-[350px] object-cover object-center" />
     </a>
     <div class="bg-primary text-white font-medium flex items-center justify-between px-3 py-1.5 rounded">
         <p>{{ $house->title }}</p>
