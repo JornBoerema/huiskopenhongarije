@@ -20,12 +20,12 @@
 <x-app-layout>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col gap-y-4" x-data="{ image: '{{ $images[0] }}' }">
-            <img x-bind:src="'/storage/' + image" alt="" class="rounded shadow-lg min-h-[480px] max-h-[480px] object-cover object-center" />
+            <img x-bind:src="image.includes('qfhungarianstorage') ? image : '/storage/' + image" alt="" class="rounded shadow-lg min-h-[480px] max-h-[480px] object-cover object-center" />
             <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
                 @foreach($images as $image)
                     <div class="relative rounded overflow-hidden">
                         <button class="absolute inset-0" @click="image = '{{ $image }}'"></button>
-                        <img src="/storage/{{ $image }}" alt="" class="border-4 border-background cursor-pointer w-[120px] h-[90px]" :class="{ '!border-primary': image === @js($image) }" />
+                        <img src="{{ str_contains($images[0], 'qfhungarianstorage') ? $images[0] : '/storage/' . $images[0] }}" alt="" class="border-4 border-background cursor-pointer w-[120px] h-[90px]" :class="{ '!border-primary': image === @js($image) }" />
                     </div>
                 @endforeach
             </div>
